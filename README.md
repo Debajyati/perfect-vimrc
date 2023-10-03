@@ -13,7 +13,7 @@ Also Make sure you run the command in the directory where your already existing 
 -  install vim-plug, nodejs, yarn, & build-essentials. 
 #### Actual work:
 1. Copy the whole text of the `.vimrc` file in the `C\C++` directory of this repo and paste it in your own `.vimrc` file. Save it.
-2. Next Run the command `:PlugInstall` inside vim (The config I'm using Vim-Plug plugin manager. If you use any other plugin manager like vundle or packer, you are free to change the config file wherever needed and then run the plugin manager's install command).
+2. Next Run the command `:PlugInstall` inside vim (According to the config, I'm using Vim-Plug plugin manager. If you use any other plugin manager like vundle or packer, you are free to change the config file wherever needed and then run the plugin manager's install command).
 3. After all plugins are installed run the `:PlugUpdate` command inside vim to update the already installed plugins.
 4. Now run `:CocInstall coc-clangd` inside vim to install the required lsp for C and C++
 5. Now navigate to your project directory, and check if the setup is working properly.
