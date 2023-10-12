@@ -24,6 +24,10 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'preservim/nerdtree'
 " Plugin to make sure your vim works the same inside tmux also
 Plug 'christoomey/vim-tmux-navigator'
+" Plugin for more visually appealing folders & icons
+Plug 'ryanoasis/vim-devicons'
+" Uncomment the next line & run :PlugInstall to install the **(Optional)** Codeium AI Plugin
+" Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 call plug#end()
 
 " use <tab> to trigger completion and navigate to the next complete item
