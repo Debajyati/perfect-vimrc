@@ -17,7 +17,7 @@ Also Make sure you run the command in the directory where your already existing 
 3. After all plugins are installed run the `:PlugUpdate` command inside vim to update the already installed plugins.
 4. Now run `:CocInstall coc-clangd` inside vim to install the required lsp for C and C++
 5. Now navigate to your project directory, and check if the setup is working properly.
-6. **(Optional)**: Uncomment the line  `Plug 'Exafunction/codeium.vim', { 'branch': 'main' }` in the config file and run `:PlugInstall` to install thr Codeium AI plugin in vim. After installation refer to the [Official Codeium AI installation and usage guide](https://codeium.com/vim_tutorial) .
+6. **(Optional)**: Uncomment the line  `Plug 'Exafunction/codeium.vim', { 'branch': 'main' }` in the config file and run `:PlugInstall` to install the Codeium AI plugin in vim. After installation refer to the [Official Codeium AI installation and usage guide](https://codeium.com/vim_tutorial) .
 7. Enjoy!
 #### Additional (How to use it) + Some Keybindings:
 1. Use **Ctrl+n** to open and close the file explorer.
