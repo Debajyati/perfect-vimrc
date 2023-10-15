@@ -23,3 +23,6 @@ Also Make sure you run the command in the directory where your already existing 
 1. Use **Ctrl+n** to open and close the file explorer.
 2. Click **Tab** to trigger completion and go down through the list of code suggestions.
 3. Click **Shift+Tab** to go up through the list of code suggessions.
+
+### Contributing
+Any kind of suggesion, contributions(bug fixes, enhancements) are cordially welcomed.
