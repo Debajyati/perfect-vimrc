@@ -12,7 +12,7 @@ Also Make sure you run the command in the directory where your already existing 
 
 -  install vim-plug, nodejs, yarn, & build-essentials. 
 #### Actual work:
-1. Copy the whole text of the `.vimrc` file in the `C\C++` directory of this repo and paste it in your own `.vimrc` file. Save it.
+1. Copy the whole text of the `.vimrc` file in the `plugin` directory of this repo and paste it in your own `.vimrc` file. Save it.
 2. Next Run the command `:PlugInstall` inside vim (According to the config, I'm using Vim-Plug plugin manager. If you use any other plugin manager like vundle or packer, you are free to change the config file wherever needed and then run the plugin manager's install command). You may need to run the command after **restarting** vim.
 3. After all plugins are installed run the `:PlugUpdate` command inside vim to update the already installed plugins.
 4. Now run `:CocInstall coc-clangd` inside vim to install the required lsp for C and C++, `:CocInstall coc-pyright` to install the required lsp for python. `:CocInstall coc-tsserver coc-json` is recommended javascript/typescript + json 
@@ -24,6 +24,7 @@ Also Make sure you run the command in the directory where your already existing 
 1. Use **Ctrl+n** to open and close the file explorer.
 2. Click **Tab** to trigger completion and go down through the list of code suggestions.
 3. Click **Shift+Tab** to go up through the list of code suggessions.
+4. Click **Ctrl+\ ** to toggle terminal. Now you can navigate to the file buffer from terminal and vice versa using your beloved mouse. Use ** Ctrl+d** to kill the terminal.
 
 ### Contributing
 Any kind of suggesion, contributions(bug fixes, enhancements) are cordially welcomed.
