@@ -31,6 +31,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ryanoasis/vim-devicons'
 " Uncomment the next line & run :PlugInstall to install the **(Optional)** Codeium AI Plugin
 " Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
+"Plugin to toggle terminal inside vim
 Plug 'prasada7/toggleterm.vim'
 call plug#end()
 
@@ -61,6 +62,8 @@ nmap <silent> <C-Bslash> <Plug>ToggletermToggle<CR>
 tmap <silent> <C-Bslash> <C-w><S-N><Plug>ToggletermToggle
 
 let g:codeium_enabled = v:false
+
+
 
 " very broad config for coc.nvim to take effect in vim
  " Some servers have issues with backup files, see #649 of coc.nvim repository
