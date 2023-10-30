@@ -22,8 +22,7 @@ Also Make sure you run the command in the directory where your already existing 
 7. Enjoy!
 #### Additional (How to use it) + Some Keybindings:
 1. Use `Ctrl+n` to open and close the file explorer.
-2. Click `Tab` or `Enter` to trigger completion and go down through the list of code suggestions. You can also use the **downward arrow key** to move down through the list of code suggesions.
-3. Click `Shift+Tab` or **upward arrow key** to go up through the list of code suggessions.
+2. Use the **arrow keys** to move down through the list of code suggesions and use `Enter` key to manually trigger completion. You can also click `Tab` to trigger completion by going down through the list of code suggesions & click `Shift+Tab` to trigger completion by going up through the list of code suggessions.
 4. Click `Ctrl+\` to toggle terminal. Now you can navigate to the file buffer from terminal and vice versa using your beloved mouse. Use `Ctrl+d` to kill the terminal.
 
 ### Contributing
