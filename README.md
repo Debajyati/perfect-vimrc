@@ -21,10 +21,10 @@ Also Make sure you run the command in the directory where your already existing 
 6. **(Optional)**: Uncomment the line  `Plug 'Exafunction/codeium.vim', { 'branch': 'main' }` in the config file and run `:PlugInstall` to install the Codeium AI plugin in vim. After installation refer to the [Official Codeium AI installation and usage guide](https://codeium.com/vim_tutorial) .
 7. Enjoy!
 #### Additional (How to use it) + Some Keybindings:
-1. Use **Ctrl+n** to open and close the file explorer.
-2. Click **Tab** to trigger completion and go down through the list of code suggestions.
-3. Click **Shift+Tab** to go up through the list of code suggessions.
-4. Click **Ctrl+\ ** to toggle terminal. Now you can navigate to the file buffer from terminal and vice versa using your beloved mouse. Use ** Ctrl+d** to kill the terminal.
+1. Use `Ctrl+n` to open and close the file explorer.
+2. Click `Tab` to trigger completion and go down through the list of code suggestions.
+3. Click `Shift+Tab` to go up through the list of code suggessions.
+4. Click `Ctrl+\` to toggle terminal. Now you can navigate to the file buffer from terminal and vice versa using your beloved mouse. Use `Ctrl+d` to kill the terminal.
 
 ### Contributing
 Any kind of suggesion, contributions(bug fixes, enhancements) are cordially welcomed.
