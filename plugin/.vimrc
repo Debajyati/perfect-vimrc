@@ -31,7 +31,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ryanoasis/vim-devicons'
 " Uncomment the next line & run :PlugInstall to install the **(Optional)** Codeium AI Plugin
 " Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
-"Plugin to toggle terminal inside vim
+" Plugin to toggle terminal inside vim
 Plug 'prasada7/toggleterm.vim'
 call plug#end()
 
