@@ -1,46 +1,42 @@
 set number
-syntax on "Enabling syntax highlighting
+set encoding=utf-8
+syntax on
 filetype plugin indent on
 set ts=2 sts=2 sw=2 et ai si
 set mouse=a " Allow to use the mouse in the editor
 set cursorline " Highlights the current line in the editor
 set title " Show file title
-set ttyfast " To scroll fast
 set term=xterm-256color
 set t_Co=256
+set noerrorbells
 
 call plug#begin('~/.vim/plugged')
 " Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline'
 " Plug coc.nvim for C/C++ lsp
 Plug 'neoclide/coc.nvim'
-" Plugin for autopairing of brackets and quotations
 Plug 'jiangmiao/auto-pairs'
-" Plugin for changing themes of vim-airline
 Plug 'vim-airline/vim-airline-themes'
-" Plugin to install & set colorscheme to Gruvbox which suits the lsp suggessions
 Plug 'gruvbox-community/gruvbox'
-" Some other themes
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
-" Plug Nerdtree to have a short File-Explorer Utility on the left of your vim-window
 Plug 'preservim/nerdtree'
-" Plugin to make sure your vim works the same inside tmux also
 Plug 'christoomey/vim-tmux-navigator'
-" Plugin for more visually appealing folders & icons
 Plug 'ryanoasis/vim-devicons'
-" Uncomment the next line & run :PlugInstall to install the **(Optional)** Codeium AI Plugin
 " Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
-" Plugin to toggle terminal inside vim
 Plug 'prasada7/toggleterm.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
+" colorscheme gruvbox
 " colorscheme onehalfdark
-colorscheme gruvbox "Setting colorscheme as Gruvbox
+ let g:airline_theme = 'catppuccin_frappe'
+ colorscheme catppuccin_frappe
 set termguicolors
 
-set bg=dark " setting background theme as dark
+set bg=dark
 let g:bargreybars_auto=0
 let g:airline_solarized_bg="dark"
 let g:airline_powerline_fonts=1
@@ -49,9 +45,10 @@ let g:airline#extension#tabline#left_sep=' '
 let g:airline#extension#tabline#left_alt_sep='|'
 let g:airline#extension#tabline#formatter='unique_tail'
 
+
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  map <C-n> :NERDTreeToggle<CR> " mapping `Ctrl+n` as our default vim keybinding for opening and closing NERDTree (explorer)  
+map <C-n> :NERDTreeToggle<CR>
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
@@ -62,8 +59,6 @@ nmap <silent> <C-Bslash> <Plug>ToggletermToggle<CR>
 tmap <silent> <C-Bslash> <C-w><S-N><Plug>ToggletermToggle
 
 let g:codeium_enabled = v:false
-
-
 
 " very broad config for coc.nvim to take effect in vim
  " Some servers have issues with backup files, see #649 of coc.nvim repository
@@ -178,6 +173,7 @@ omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
+
 " Use CTRL-S for selections ranges
 " Requires 'textDocument/selectionRange' support of language server
 nmap <silent> <C-s> <Plug>(coc-range-select)
@@ -214,3 +210,11 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+
+" KeyMaps for fuzzy finder
+nnoremap <silent><space>b :Buffers<CR>
+nnoremap <C-p> :Files<Cr>
+
+" Source Vim configuration file and install plugins
+nnoremap <silent><space>1 :source ~/.vimrc \| :PlugInstall<CR>
