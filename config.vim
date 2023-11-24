@@ -29,11 +29,12 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
-
-" colorscheme gruvbox
+" make any colorscheme of the below as default by uncommenting them
+" I am keeping gruvbox as default by commenting all others except gruvbox
+colorscheme gruvbox
 " colorscheme onehalfdark
- let g:airline_theme = 'catppuccin_frappe'
- colorscheme catppuccin_frappe
+let g:airline_theme = 'catppuccin_frappe'
+" colorscheme catppuccin_frappe
 set termguicolors
 
 set bg=dark
