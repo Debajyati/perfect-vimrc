@@ -1,3 +1,4 @@
+let g:mapleader = ","
 set number
 set encoding=utf-8
 syntax on
@@ -219,3 +220,30 @@ nnoremap <C-p> :Files<Cr>
 
 " Source Vim configuration file and install plugins
 nnoremap <silent><space>1 :source ~/.vimrc \| :PlugInstall<CR>
+
+" enabling backspace to be usable at any point in insert mode
+set backspace=indent,eol,start  "powerful backspacing
+
+
+" Optional inbuilt omnicompletion setup for HTML,CSS,Javascript & PHP
+
+" set omnifunc=javascriptcompleteCompleteJS
+" set omnifunc=htmlcomplete#CompleteTags
+" set omnifunc=csscomplete#CompleteCSS
+" set omnifunc=phpcomplete#CompletePHP
+
+" Disable visualbell
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
+
+"" Copy/Paste/Cut
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+endif
+
+noremap YY "+y<CR>
+noremap <leader>p "+gP<CR>
+noremap XX "+x<CR>
+
