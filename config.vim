@@ -9,7 +9,6 @@ set cursorline " Highlights the current line in the editor
 set title " Show file title
 set term=xterm-256color
 set t_Co=256
-set noerrorbells
 
 call plug#begin('~/.vim/plugged')
 " Plug 'vim-airline/vim-airline'
