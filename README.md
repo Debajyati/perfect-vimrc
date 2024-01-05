@@ -12,7 +12,7 @@ Also Make sure you run the command in the directory where your already existing 
 -  install vim-plug, nodejs, yarn, & build-essentials.
 
 ### Note:
-This config can also be used for NeoVim if wanted. Just replace the directory `~/.vim/plugged` with `.local/share/nvim/plugged` in the first line of the section of the config shown below, before performing the 2nd step of [Instructions](####actual-work:) -  
+This config can also be used for NeoVim if wanted. Just replace the directory `~/.vim/plugged` with `.local/share/nvim/plugged` in the first line of the section of the config shown below, before performing the 2nd step of [Instructions](#actual-work:) -  
 ```vim
 call plug#begin('~/.vim/plugged')
 " Plug 'vim-airline/vim-airline'
