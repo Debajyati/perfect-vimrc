@@ -5,8 +5,9 @@
 #### Prerequisites:
 - Make sure you already have a backup of your previous **vim-config** (if any).
 In case you have already a **vim-config** and you don't want to lose it, you can make a **backup** file using the command below before creating the new `.vimrc` -
-
+```bash
       mv .vimrc .vimrc.bak
+```
 Also Make sure you run the command in the directory where your already existing .vimrc is located. The command will rename it with a .bak file-extension which stands for backup. Now this backup file can be stored/located wherever wanted.
 
 -  install vim-plug, nodejs, yarn, & build-essentials.
