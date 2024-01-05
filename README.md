@@ -36,7 +36,7 @@ call plug#end()
 
 #### Actual Work
 1. Copy the whole text of the `config.vim` file in this repo and paste it in your own blank `.vimrc` file. Save it. 
-2. Next Run the command `:PlugInstall` inside vim (According to the config, I'm using Vim-Plug plugin manager. If you use any other plugin manager like vundle or packer, you are free to change the config file wherever needed and then run the plugin manager's install command). You may need to run the command after **restarting** vim. You may also need to run `:PLugClean' to remove all the previously installed plugins.
+2. Next Run the command `:PlugInstall` inside vim (According to the config, I'm using Vim-Plug plugin manager. If you use any other plugin manager like vundle or packer, you are free to change the config file wherever needed and then run the plugin manager's install command). You may need to run the command after **restarting** vim. You may also need to run `:PLugClean` to remove all the previously installed plugins.
 3. After all plugins are installed run the `:PlugUpdate` command inside vim to update the already installed plugins.
 4. Before to be able to use **coc.nvim** you will need to run `npm ci` in the directory `~/.vim/plugged/coc.nvim` (if you are using vim) or `~/.local/share/nvim/plugged/coc.nvim` (if you are using neovim) to activate it.
 5. Now run `:CocInstall coc-clangd` inside vim to install the required lsp for C and C++, `:CocInstall coc-pyright` to install the required lsp for python. `:CocInstall coc-tsserver coc-json coc-eslint` is recommended javascript/typescript + json 
