@@ -13,7 +13,7 @@ set t_Co=256
 call plug#begin('~/.vim/plugged')
 " Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline'
-" Plug coc.nvim for C/C++ lsp
+" Plug coc.nvim for Language-Server-Protocol
 Plug 'neoclide/coc.nvim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline-themes'
