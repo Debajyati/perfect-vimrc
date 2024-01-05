@@ -12,7 +12,7 @@ Also Make sure you run the command in the directory where your already existing 
 -  install vim-plug, nodejs, yarn, & build-essentials.
 
 ### Note:
-This config can also be used for NeoVim if wanted. Just replace the directory `~/.vim/plugged` with `.local/share/nvim/plugged` in the first line of the section of the config shown below, before performing the 2nd step of [Instructions](#actual-work:) -  
+This config can also be used for NeoVim if wanted. Just replace the directory `~/.vim/plugged` with `.local/share/nvim/plugged` in the first line of the section of the config shown below, before performing the 2nd step of [Instructions](#actual-work) -  
 ```vim
 call plug#begin('~/.vim/plugged')
 " Plug 'vim-airline/vim-airline'
@@ -34,7 +34,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 ```
 
-#### Actual work:
+#### Actual Work
 1. Copy the whole text of the `config.vim` file in this repo and paste it in your own blank `.vimrc` file. Save it. 
 2. Next Run the command `:PlugInstall` inside vim (According to the config, I'm using Vim-Plug plugin manager. If you use any other plugin manager like vundle or packer, you are free to change the config file wherever needed and then run the plugin manager's install command). You may need to run the command after **restarting** vim. You may also need to run `:PLugClean' to remove all the previously installed plugins.
 3. After all plugins are installed run the `:PlugUpdate` command inside vim to update the already installed plugins.
