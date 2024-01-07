@@ -7,8 +7,8 @@ set ts=2 sts=2 sw=2 et ai si
 set mouse=a " Allow to use the mouse in the editor
 set cursorline " Highlights the current line in the editor
 set title " Show file title
-set term=xterm-256color
-set t_Co=256
+" set term=xterm-256color
+" set t_Co=256
 
 call plug#begin('~/.vim/plugged')
 " Plug 'vim-airline/vim-airline'
