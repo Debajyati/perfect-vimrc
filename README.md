@@ -46,9 +46,13 @@ call plug#end()
 7. **(Optional)**: Uncomment the line  `Plug 'Exafunction/codeium.vim', { 'branch': 'main' }` in the config file and run `:PlugInstall` to install the Codeium AI plugin in vim. After installation refer to the [Official Codeium AI installation and usage guide](https://codeium.com/vim_tutorial) .
 8. Enjoy!
 #### Additional (How to use it) + Some Keybindings:
-1. Use `Ctrl+n` to open and close the file explorer.
-2. Use the **arrow keys** to move down through the list of code suggesions and use `Enter` key to manually trigger completion. You can also click `Tab` to trigger completion by going down through the list of code suggesions & click `Shift+Tab` to trigger completion by going up through the list of code suggessions.
-4. Click `Ctrl+\` to toggle terminal. Now you can navigate to the file buffer from terminal and vice versa using your beloved mouse. Use `Ctrl+d` to kill the terminal.
+1. `,` is the leader key in this configuration.
+2. Use `,+n` to open and close the file explorer.
+3. Use the **arrow keys** to move down through the list of code suggesions and use `Enter` key to manually trigger completion. You can also click `Tab` to trigger completion by going down through the list of code suggesions & click `Shift+Tab` to trigger completion by going up through the list of code suggessions.
+4. Click `Ctrl+\` to toggle terminal. Now you can navigate to the file buffer from terminal and vice versa using the native window navigation keymaps of vim or your beloved mouse, whatever you want. Use `Ctrl+d` to kill the terminal.
+5. Run `:Colors` to change colorscheme
+6. Click `<space>ff` to quickly navigate to a file inside the CWD, with fuzzy search(fzf) **(Optional: for file preview- install bat. for debian/ubuntu - `sudo apt install bat`)**.
+7. Click `<space>b` to quickly navigate to an existing buffer inside the CWD.
 
 ### Contributing
 Any kind of suggesion, contributions(bug fixes, enhancements) are cordially welcomed.
