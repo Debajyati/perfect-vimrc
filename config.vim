@@ -49,7 +49,7 @@ let g:airline#extension#tabline#formatter='unique_tail'
 
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
