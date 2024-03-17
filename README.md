@@ -51,7 +51,7 @@ call plug#end()
 3. Use the **arrow keys** to move down through the list of code suggesions and use `Enter` key to manually trigger completion. You can also click `Tab` to trigger completion by going down through the list of code suggesions & click `Shift+Tab` to trigger completion by going up through the list of code suggessions.
 4. Click `Ctrl+\` to toggle terminal. Now you can navigate to the file buffer from terminal and vice versa using the native window navigation keymaps of vim or your beloved mouse, whatever you want. Use `Ctrl+d` to kill the terminal.
 5. Run `:Colors` to change colorscheme
-6. Click `<space>ff` to quickly navigate to a file inside the CWD, with fuzzy search(fzf) **(Optional: for file preview- install bat. for debian/ubuntu - `sudo apt install bat`)**.
+6. Click `<space>ff` to quickly navigate to a file inside the CWD, with fuzzy search(fzf) **(Optional: for file preview- install bat. for debian/ubuntu - `sudo apt install bat`. For windows - `scoop install bat`)**.
 7. Click `<space>b` to quickly navigate to an existing buffer inside the CWD.
 
 ### Contributing
