@@ -7,6 +7,7 @@ set ts=2 sts=2 sw=2 et ai si
 set mouse=a " Allow to use the mouse in the editor
 set cursorline " Highlights the current line in the editor
 set title " Show file title
+set wildmenu
 " set term=xterm-256color
 " set t_Co=256
 
