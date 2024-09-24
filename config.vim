@@ -1,5 +1,6 @@
-let g:mapleader = ","
+let g:mapleader = ' '
 set number
+set relativenumber
 set encoding=utf-8
 syntax on
 filetype plugin indent on
@@ -8,35 +9,40 @@ set mouse=a " Allow to use the mouse in the editor
 set cursorline " Highlights the current line in the editor
 set title " Show file title
 set wildmenu
-" set term=xterm-256color
-" set t_Co=256
+set guicursor="n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+set term=xterm-256color
+set t_Co=256
 
 call plug#begin('~/.vim/plugged')
-" Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline'
-" Plug coc.nvim for Language-Server-Protocol
-Plug 'neoclide/coc.nvim'
+" Plug coc.nvim for lsp
+" Use release branch (recommended)
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'gruvbox-community/gruvbox'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'hachy/eva01.vim',
 Plug 'preservim/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ryanoasis/vim-devicons'
 " Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
-Plug 'prasada7/toggleterm.vim'
+Plug 'Debajyati/turboterm.vim', { 'tag': '*' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'thinca/vim-quickrun'
+Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'mg979/vim-visual-multi'
+
+" On-demand lazy load
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 call plug#end()
 
-" make any colorscheme of the below as default by uncommenting them
-" I am keeping gruvbox as default by commenting all others except gruvbox
-colorscheme gruvbox
+colorscheme catppuccin_frappe
 " colorscheme onehalfdark
-let g:airline_theme = 'catppuccin_frappe'
-" colorscheme catppuccin_frappe
-set termguicolors
+let g:airline_theme = 'night_owl'
 
 set bg=dark
 let g:bargreybars_auto=0
@@ -46,23 +52,20 @@ let g:airline#extension#tabline#enabled=1
 let g:airline#extension#tabline#left_sep=' '
 let g:airline#extension#tabline#left_alt_sep='|'
 let g:airline#extension#tabline#formatter='unique_tail'
+let g:airline#extensions#coc#enabled = 1
 
+set termguicolors
 
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <leader>n :NERDTreeToggle<CR>
+map <leader>fe :NERDTreeToggle<CR>
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
-
-" CTRL + \ is the default
-nmap <silent> <C-Bslash> <Plug>ToggletermToggle<CR>
-tmap <silent> <C-Bslash> <C-w><S-N><Plug>ToggletermToggle
-
 let g:codeium_enabled = v:false
 
-" very broad config for coc.nvim to take effect in vim
+" very broad config for coc.nvim to take effect in vim 
  " Some servers have issues with backup files, see #649 of coc.nvim repository
  " for references.
 set nobackup
@@ -96,13 +99,6 @@ function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-" Use <c-space> to trigger completion
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
@@ -156,30 +152,8 @@ nmap <leader>as  <Plug>(coc-codeaction-source)
 " Apply the most preferred quickfix action to fix diagnostic on the current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Remap keys for applying refactor code actions
-nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
-xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
-nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
-
 " Run the Code Lens action on the current line
 nmap <leader>cl  <Plug>(coc-codelens-action)
-
-" Map function and class text objects
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server
-xmap if <Plug>(coc-funcobj-i)
-omap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap af <Plug>(coc-funcobj-a)
-xmap ic <Plug>(coc-classobj-i)
-omap ic <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
-
-
-" Use CTRL-S for selections ranges
-" Requires 'textDocument/selectionRange' support of language server
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer
 command! -nargs=0 Format :call CocActionAsync('format')
@@ -189,11 +163,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
-
-" Add (Neo)Vim's native statusline support
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics
@@ -206,44 +175,41 @@ nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
 
 " KeyMaps for fuzzy finder
 nnoremap <silent><space>b :Buffers<CR>
-nnoremap <C-p> :Files<Cr>
+nnoremap <silent><space>ff :Files<Cr>
 
+" More Keymaps 
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+nnoremap <leader>th :Colors<CR>
 " Source Vim configuration file and install plugins
 nnoremap <silent><space>1 :source ~/.vimrc \| :PlugInstall<CR>
+"custom binding to see quick uninteractive output:
+nnoremap <silent><space>r :QuickRun<CR>
 
-" enabling backspace to be usable at any point in insert mode
 set backspace=indent,eol,start  "powerful backspacing
 
-
-" Optional inbuilt omnicompletion setup for HTML,CSS,Javascript & PHP
-
-" set omnifunc=javascriptcompleteCompleteJS
-" set omnifunc=htmlcomplete#CompleteTags
-" set omnifunc=csscomplete#CompleteCSS
-" set omnifunc=phpcomplete#CompletePHP
+"set omnifunc=javascriptcompleteCompleteJS
+"set omnifunc=tmlcomplete#CompleteTags
+"set omnifunc=csscomplete#CompleteCSS
+"set omnifunc=phpcomplete#CompletePHP
 
 " Disable visualbell
-set noerrorbells visualbell t_vb=
 if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
 
 "" Copy/Paste/Cut
 if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
+  set clipboard+=unnamedplus
 endif
 
-noremap YY "+y<CR>
-noremap <leader>p "+gP<CR>
-noremap XX "+x<CR>
-
+" WSL yank support
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
